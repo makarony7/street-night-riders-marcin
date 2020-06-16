@@ -1,0 +1,23 @@
+.container {
+  max-width: 1140px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-between;
+}
+.navigation__logo img {
+  width: 100px;
+  height: auto;
+}
+.navigation__nav {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}

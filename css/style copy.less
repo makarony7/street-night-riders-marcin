@@ -1,0 +1,42 @@
+// out style.css
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// nav
+a {
+    color: #000;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+
+    &:hover {
+        color: #007862;
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-between;
+
+    &__logo {
+        img {
+            width: 100px;
+            height: auto;
+        }
+    }
+
+    &__nav {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+}
