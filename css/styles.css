@@ -28,6 +28,8 @@ h3,
 h4,
 h5,
 h6,
+ol,
+ul,
 p {
   margin: 0;
 }
@@ -43,11 +45,19 @@ a {
 a a:hover {
   color: #33CC00;
 }
-img {
-  max-width: 100%;
-  height: auto;
+ol {
+  margin-bottom: 30px;
+  padding-left: 18px;
 }
-.img-fluid {
+ol:last-of-type {
+  margin-bottom: 0;
+}
+ol li {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+img {
   max-width: 100%;
   height: auto;
 }
@@ -60,10 +70,30 @@ img {
   margin-left: 0;
   opacity: 1;
 }
+.font-34 {
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 400;
+}
+.font-22 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 400;
+}
 .font-16 {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: 400;
+}
+.sub-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.small-title {
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 .top-line {
   position: relative;
@@ -128,13 +158,22 @@ img {
   opacity: 1;
   pointer-events: auto;
 }
+.default-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.padding-60-0 {
+  padding: 60px 0;
+}
 .nav-fixed {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 99;
   padding: 10px 0;
-  border-top: 3px #33CC00 solid;
   background-color: #fff;
   -webkit-transition-duration: 1s;
   -moz-transition-duration: 1s;
@@ -174,7 +213,7 @@ img {
 }
 .navigation__nav-ul li a {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: 400;
   font-weight: 600;
   text-transform: uppercase;
@@ -217,15 +256,43 @@ img {
     display: none;
   }
 }
-.default-bg {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-}
-.default-bg.top-background {
+.top-background {
   background-image: url("../images/top-background.jpg");
+}
+.informations p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.informations p:last-of-type {
+  margin-bottom: 0;
+}
+.informations img {
+  float: right;
+  max-width: 50%;
+  padding-left: 40px;
+  padding-bottom: 30px;
+}
+.gallery-inside {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3px;
+}
+.gallery-inside a {
+  display: block;
+}
+.gallery-inside a img {
+  display: block;
+  filter: brightness(0.8);
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.gallery-inside a:hover img {
+  filter: brightness(1);
 }
 .contact {
   position: relative;

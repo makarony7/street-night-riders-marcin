@@ -32,7 +32,7 @@ $(document).ready(function () {
         AdjustHeader();
     });
     function AdjustHeader() {
-        if ($(window).scrollTop() > 1) {
+        if ($(window).scrollTop() > 100) {
             if (!$navbar.hasClass("nav-fixed-scroll")) {
                 $navbar.addClass("nav-fixed-scroll");
             }
