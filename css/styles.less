@@ -44,9 +44,9 @@
 
 // VARIABLES START
 @bg-main: #fbfbfb;
-@bg-dark: #003B00;
-@color-primary: #33CC00;
-@color-primary-hover: #7ED956;
+@color-dark: #012837;
+@color-primary: #003847;
+@color-primary-hover: #004253;
 @color-secondary: #8a8fa3;
 @color-white: #fff;
 @color-black: #000;
@@ -146,6 +146,12 @@ img {
     opacity: 1;
 }
 
+.font-50 {
+    font-size: 50px;
+    line-height: 70px;
+    font-weight: 500;
+}
+
 .font-34 {
     font-size: 38px;
     line-height: 44px;
@@ -155,6 +161,12 @@ img {
 .font-22 {
     font-size: 22px;
     line-height: 30px;
+    font-weight: 400;
+}
+
+.font-18 {
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 400;
 }
 
@@ -178,18 +190,17 @@ img {
 
 .top-line {
     position: relative;
-    .transition(all 0.3s ease-out 0s);
 
     &::before {
-        position: absolute;
         content: '';
-        width: 3px;
-        height: 0;
-        background-color: @color-primary;
+        position: absolute;
+        bottom: -2px;
         left: 50%;
-        top: -50px;
-        .tranform(translateX(-50%));
-        .transition(all 0.3s ease-out 0s);
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: @color-primary;
+        .trans-dur(@time-03);
     }
 }
 
@@ -238,8 +249,22 @@ img {
     width: 100%;
 }
 
-.padding-60-0 {
-    padding: 60px 0;
+.padding-x-0 {
+    padding: 50px 0;
+}
+
+.mask {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 // GLOBAL CLASSESS END
@@ -296,10 +321,11 @@ img {
                 }
 
                 a {
-                    .font-16;
-                    font-weight: 600;
+                    .font-18;
+                    font-weight: 500;
                     text-transform: uppercase;
                     .top-line;
+                    display: block;
                 }
 
                 &.active,
@@ -308,7 +334,7 @@ img {
                         color: @color-primary;
 
                         &::before {
-                            height: 40px;
+                            width: 100%;
                         }
                     }
                 }
@@ -326,6 +352,28 @@ img {
 // top-background
 .top-background {
     background-image: url("../images/top-background.jpg");
+    .mask;
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: @color-white;
+        display: block;
+        .font-50;
+        width: 95%;
+        text-transform: uppercase;
+
+        span {
+            display: block;
+        }
+
+        @media @width-575 {
+            padding: 15px 0;
+        }
+    }
 }
 
 // informations
@@ -340,7 +388,7 @@ img {
 
     img {
         float: right;
-        max-width: 50%;
+        max-width: 45%;
         padding-left: 40px;
         padding-bottom: 30px;
     }
@@ -374,26 +422,53 @@ img {
 // contact
 .contact-background {
     background-image: url("../images/underwater.jpg");
-    height: 500px;
+    height: 400px;
     position: relative;
-
+    .mask;
 
     &-inside {
         position: absolute;
         top: 50%;
+        left: 0;
         transform: translateY(-50%);
         width: 100%;
         color: @color-white;
         z-index: 2;
+
+        .contacts {
+            display: flex;
+            justify-content: space-around;
+
+            a {
+                color: @color-white;
+                text-align: center;
+                width: 200px;
+
+                i {
+                    display: block;
+                    margin-bottom: 0px;
+
+                    &::before {
+                        font-size: 50px;
+                    }
+                }
+
+                h3 {
+                    .font-22;
+                    font-weight: 300;
+                }
+
+                &:hover {
+                    color: #EBF4FF;
+                }
+            }
+        }
     }
 }
 
-// INSIDE END
-.contact {
-}
-
+// footer
 .footer {
-    background-color: @bg-dark;
+    background-color: @color-dark;
     position: relative;
     margin-top: -4px;
 
@@ -403,6 +478,9 @@ img {
         text-align: center;
     }
 }
+
+// INSIDE END
+
 
 .hamburger {
     position: relative;

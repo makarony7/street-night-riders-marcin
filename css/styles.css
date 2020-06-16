@@ -46,7 +46,7 @@ a {
   text-decoration: none;
 }
 a a:hover {
-  color: #33CC00;
+  color: #003847;
 }
 ol,
 ul {
@@ -77,6 +77,11 @@ img {
   margin-left: 0;
   opacity: 1;
 }
+.font-50 {
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: 500;
+}
 .font-34 {
   font-size: 38px;
   line-height: 44px;
@@ -85,6 +90,11 @@ img {
 .font-22 {
   font-size: 22px;
   line-height: 30px;
+  font-weight: 400;
+}
+.font-18 {
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 400;
 }
 .font-16 {
@@ -104,30 +114,21 @@ img {
 }
 .top-line {
   position: relative;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
 }
 .top-line::before {
-  position: absolute;
   content: '';
-  width: 3px;
-  height: 0;
-  background-color: #33CC00;
+  position: absolute;
+  bottom: -2px;
   left: 50%;
-  top: -50px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
+  width: 0;
+  height: 2px;
+  background-color: #003847;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 .back-to-top {
   position: fixed;
@@ -139,7 +140,7 @@ img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: #33CC00;
+  background-color: #003847;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -ms-transition-duration: 0.3s;
@@ -158,7 +159,7 @@ img {
   color: #fff;
 }
 .back-to-top:hover {
-  background-color: #7ED956;
+  background-color: #004253;
 }
 .back-to-top-show {
   z-index: 80;
@@ -172,8 +173,20 @@ img {
   height: 100vh;
   width: 100%;
 }
-.padding-60-0 {
-  padding: 60px 0;
+.padding-x-0 {
+  padding: 50px 0;
+}
+.mask {
+  position: relative;
+}
+.mask::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .nav-fixed {
   position: fixed;
@@ -190,7 +203,7 @@ img {
 }
 .nav-fixed-scroll {
   padding: 3px 0;
-  border-bottom: 1px #33CC00 solid;
+  border-bottom: 1px #003847 solid;
 }
 .navigation {
   display: flex;
@@ -220,44 +233,36 @@ img {
   margin-right: 0;
 }
 .navigation__nav-ul li a {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 400;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   position: relative;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
+  display: block;
 }
 .navigation__nav-ul li a::before {
-  position: absolute;
   content: '';
-  width: 3px;
-  height: 0;
-  background-color: #33CC00;
+  position: absolute;
+  bottom: -2px;
   left: 50%;
-  top: -50px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
+  width: 0;
+  height: 2px;
+  background-color: #003847;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 .navigation__nav-ul li.active a,
 .navigation__nav-ul li:hover a {
-  color: #33CC00;
+  color: #003847;
 }
 .navigation__nav-ul li.active a::before,
 .navigation__nav-ul li:hover a::before {
-  height: 40px;
+  width: 100%;
 }
 @media only screen and (min-width: 992px) {
   .navigation__nav .rwd-hamburger {
@@ -266,6 +271,38 @@ img {
 }
 .top-background {
   background-image: url("../images/top-background.jpg");
+  position: relative;
+}
+.top-background::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.top-background h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  display: block;
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: 500;
+  width: 95%;
+  text-transform: uppercase;
+}
+.top-background h1 span {
+  display: block;
+}
+@media only screen and (max-width: 575px) {
+  .top-background h1 {
+    padding: 15px 0;
+  }
 }
 .informations p {
   margin-bottom: 20px;
@@ -275,7 +312,7 @@ img {
 }
 .informations img {
   float: right;
-  max-width: 50%;
+  max-width: 45%;
   padding-left: 40px;
   padding-bottom: 30px;
 }
@@ -301,19 +338,54 @@ img {
 }
 .contact-background {
   background-image: url("../images/underwater.jpg");
-  height: 500px;
+  height: 400px;
   position: relative;
+}
+.contact-background::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .contact-background-inside {
   position: absolute;
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
   width: 100%;
   color: #fff;
   z-index: 2;
 }
+.contact-background-inside .contacts {
+  display: flex;
+  justify-content: space-around;
+}
+.contact-background-inside .contacts a {
+  color: #fff;
+  text-align: center;
+  width: 200px;
+}
+.contact-background-inside .contacts a i {
+  display: block;
+  margin-bottom: 0px;
+}
+.contact-background-inside .contacts a i::before {
+  font-size: 50px;
+}
+.contact-background-inside .contacts a h3 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 400;
+  font-weight: 300;
+}
+.contact-background-inside .contacts a:hover {
+  color: #EBF4FF;
+}
 .footer {
-  background-color: #003B00;
+  background-color: #012837;
   position: relative;
   margin-top: -4px;
 }
@@ -337,7 +409,7 @@ img {
   position: absolute;
   height: 6px;
   width: 100%;
-  background: #33CC00;
+  background: #003847;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -380,7 +452,7 @@ img {
   left: 50%;
 }
 .menuBg {
-  background: #33CC00;
+  background: #003847;
   width: 3000px;
   height: 3000px;
   border-radius: 50%;
