@@ -79,7 +79,7 @@ html {
 }
 
 .container {
-    max-width: 1340px;
+    max-width: 1240px;
     padding-right: 20px;
     padding-left: 20px;
     margin-right: auto;
@@ -88,6 +88,10 @@ html {
     @media (max-width: 575px) {
         padding-right: 15px;
         padding-left: 15px;
+    }
+
+    &-big {
+        max-width: 1440px;
     }
 }
 
@@ -113,17 +117,18 @@ a {
     }
 }
 
-ol {
+ol,
+ul {
     margin-bottom: 30px;
     padding-left: 18px;
-
-    &:last-of-type {
-        margin-bottom: 0;
-    }
 
     li {
         .font-16;
     }
+}
+
+p {
+    .font-16;
 }
 
 img {
@@ -274,6 +279,7 @@ img {
             display: flex;
             align-items: center;
             padding: 0;
+            margin-bottom: 0;
 
             li {
                 list-style: none;
@@ -325,7 +331,6 @@ img {
 // informations
 .informations {
     p {
-        .font-16;
         margin-bottom: 20px;
 
         &:last-of-type {
@@ -366,95 +371,25 @@ img {
     }
 }
 
-// INSIDE END
-.contact {
+// contact
+.contact-background {
+    background-image: url("../images/underwater.jpg");
+    height: 500px;
     position: relative;
 
-    .inside {
-        display: flex;
-        width: 100%;
-        align-items: flex-start;
-        justify-content: space-between;
 
-        @media (max-width: 991px) {
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px;
-        margin: 20px;
-        width: 300px;
-        height: 200px;
-        border: 1px solid @color-primary-hover;
-        background-color: @color-white;
-        transition: all .3s ease-out 0s;
-        -webkit-transition: all .3s ease-out 0s;
-        -moz-transition: all .3s ease-out 0s;
-        -ms-transition: all .3s ease-out 0s;
-        -o-transition: all .3s ease-out 0s;
-
-        @media (max-width: 991px) {
-            width: 31%;
-        }
-
-        @media (max-width: 767px) {
-            width: 34%;
-            margin: 10px;
-            height: 160px;
-        }
-
-        @media (max-width: 575px) {
-            width: 50%;
-        }
-
-        @media (max-width: 479px) {
-            width: 80%;
-        }
-
-        &:hover {
-            box-shadow: 0 0 1px 0 @color-primary;
-            -webkit-box-shadow: 0 0 1px 0 @color-primary;
-            -moz-box-shadow: 0 0 1px 0 @color-primary;
-            border: 1px solid @color-primary;
-        }
-    }
-
-    p {
-        line-height: 22px;
-        text-align: center;
-    }
-
-    img {
+    &-inside {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 300px;
-        height: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        color: @color-white;
+        z-index: 2;
     }
+}
 
-    i {
-        margin-bottom: 20px;
-
-
-        &::before {
-            color: @color-primary;
-            font-size: 50px;
-            -webkit-transition-duration: .3s;
-            -moz-transition-duration: .3s;
-            -o-transition-duration: .3s;
-            transition-duration: .3s;
-        }
-    }
-
-    .map {
-        margin-top: 70px;
-    }
+// INSIDE END
+.contact {
 }
 
 .footer {
