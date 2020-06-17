@@ -659,6 +659,7 @@ img {
   right: -400px;
   z-index: 97;
   height: 100%;
+  min-height: 100%;
   padding: 0 50px;
   background-color: #fff;
   -webkit-box-shadow: 3px 5px 6px rgba(0, 0, 0, 0);
