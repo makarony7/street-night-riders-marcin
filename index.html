@@ -18,14 +18,11 @@
 
     <title>Lorem Ipsum - domek do wynajęcia Bieszczady</title>
 
-    <link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
+    <link href='https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;700;900&display=swap' rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
     <link rel="stylesheet" type="text/css" href="css/baguetteBox.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;700;900&display=swap');
-    </style>
 </head>
 
 <body class="root">
@@ -272,16 +269,8 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/baguetteBox.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         baguetteBox.run('.gallery-inside');
-        AOS.init();
-        AOS.init({
-            disable: function () {
-                var maxWidth = 1199;
-                return window.innerWidth < maxWidth;
-            }
-        });
     </script>
 </body>
 
