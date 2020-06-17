@@ -1,29 +1,29 @@
-function animateMenu() {
-    var menu = $('.menuBg');
-    var nav = $('.mobileNav');
+// function animateMenu() {
+//     var menu = $('.menuBg');
+//     var nav = $('.mobileNav');
 
-    if (menu.hasClass('showMenu')) {
-        menu.removeClass('showMenu').addClass('hideMenu');
-        nav.removeClass('fadeIn');
-    } else if (menu.hasClass('hideMenu')) {
-        menu.removeClass('hideMenu').addClass('showMenu');
-        nav.addClass('fadeIn')
-    } else {
-        menu.addClass('showMenu');
-        nav.addClass('fadeIn');
-    }
-};
+//     if (menu.hasClass('showMenu')) {
+//         menu.removeClass('showMenu').addClass('hideMenu');
+//         nav.removeClass('fadeIn');
+//     } else if (menu.hasClass('hideMenu')) {
+//         menu.removeClass('hideMenu').addClass('showMenu');
+//         nav.addClass('fadeIn')
+//     } else {
+//         menu.addClass('showMenu');
+//         nav.addClass('fadeIn');
+//     }
+// };
 
-$(document).ready(function () {
-    $('.hamburger').on('click', function () {
-        $(this).toggleClass('open');
-        animateMenu();
-    });
-    $('.mobileNav a').on('click', function () {
-        $('.hamburger').toggleClass('open');
-        animateMenu();
-    });
-});
+// $(document).ready(function () {
+//     $('.hamburger').on('click', function () {
+//         $(this).toggleClass('open');
+//         animateMenu();
+//     });
+//     $('.mobileNav a').on('click', function () {
+//         $('.hamburger').toggleClass('open');
+//         animateMenu();
+//     });
+// });
 
 $(document).ready(function () {
     var $navbar = $(".nav-fixed");
@@ -86,3 +86,51 @@ $(function() {
         }
     });
 });
+
+(function() {
+    const hamburger = document.querySelector("#hamburger")
+    const hiddenMenu = document.querySelector("#hiddenMenu")
+    const hiddenMenuLi = document.getElementsByClassName("hiddenMenuLi")
+    const main = document.querySelector("#main")
+    const scrollTop = document.querySelector("#scrollTop")
+
+    for (var i = 0; i < hiddenMenuLi.length; i++) {
+        hiddenMenuLi[i].addEventListener('click', removeClass);
+      }
+
+    function removeClass(e) {
+        if (hamburger.classList.contains("open")) {
+            hamburger.classList.remove("open")
+        }
+
+        if (hiddenMenu.classList.contains("open")) {
+            hiddenMenu.classList.remove("open")
+        }
+    }
+
+    hamburger.addEventListener("click", function() {
+        this.classList.toggle("open")
+        hiddenMenu.classList.toggle("open")
+    })
+
+    main.addEventListener("click", function() {
+        if (hamburger.classList.contains("open")) {
+            hamburger.classList.remove("open")
+        }
+
+        if (hiddenMenu.classList.contains("open")) {
+            hiddenMenu.classList.remove("open")
+        }
+    })
+
+    scrollTop.addEventListener("click", function() {
+        if (hamburger.classList.contains("open")) {
+            hamburger.classList.remove("open")
+        }
+
+        if (hiddenMenu.classList.contains("open")) {
+            hiddenMenu.classList.remove("open")
+        }
+    })
+})
+();
