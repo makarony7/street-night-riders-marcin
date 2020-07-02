@@ -614,6 +614,7 @@ img {
 
                     &::before {
                         font-size: 50px;
+                        .trans-dur(@time-03);
 
                         @media @width-991 {
                             font-size: 44px;
@@ -628,10 +629,15 @@ img {
                 h3 {
                     .font-22;
                     font-weight: 300;
+                    .trans-dur(@time-03);
                 }
 
                 &:hover {
-                    color: #EBF4FF;
+
+                    i::before,
+                    h3 {
+                        text-shadow: 2px 2px 3px @color-black;
+                    }
                 }
             }
         }

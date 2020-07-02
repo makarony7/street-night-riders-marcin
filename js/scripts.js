@@ -116,7 +116,7 @@ $().ready(function() {
         document.cookie = sName + "=1;expires=" + oExpire;
         $("#cookie-warn").hide("slow");
     });
- 
+
     var sStr = '; '+ document.cookie +';';
     var nIndex = sStr.indexOf('; '+ escape(sName) +'=');
     if (nIndex === -1) {
