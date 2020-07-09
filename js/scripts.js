@@ -108,6 +108,39 @@ $(function() {
 })
 ();
 
+(function(){
+    var copys = document.querySelectorAll(".copy");
+
+    for (var i = 0; i < copys.length; i++) {
+        copys[i].addEventListener('click', addClass);
+      }
+
+    function addClass(e) {
+        this.classList.add("copied")
+        var _this = this;
+
+        setTimeout(function () {
+            _this.classList.remove("copied")
+        }, 700);
+      }
+})
+();
+
+var copy = document.querySelectorAll(".copy");
+
+for (const copies of copy) {
+  copies.onclick = function() {
+    document.execCommand("copy");
+  };
+  copies.addEventListener("copy", function(event) {
+    event.preventDefault();
+    if (event.clipboardData) {
+      event.clipboardData.setData("text/plain", copies.textContent);
+      console.log(event.clipboardData.getData("text"))
+    };
+  });
+};
+
 $().ready(function() {
     var sName = "cookiesok";
     $("#close-cookie-warn").click(function(){
