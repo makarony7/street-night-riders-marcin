@@ -692,6 +692,10 @@ img {
     height: 400px;
   }
 }
+.map iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
 .footer {
   background-color: #012837;
   position: relative;
