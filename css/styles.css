@@ -608,32 +608,29 @@ img {
   }
 }
 .contact-background-inside .contacts {
-  display: flex;
-  justify-content: space-around;
-}
-@media only screen and (max-width: 991px) {
-  .contact-background-inside .contacts {
-    justify-content: space-between;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 @media only screen and (max-width: 767px) {
   .contact-background-inside .contacts {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.contact-background-inside .contacts__ins {
+  justify-self: center;
+}
+@media only screen and (max-width: 767px) {
+  .contact-background-inside .contacts__ins {
+    margin-bottom: 20px;
+  }
+  .contact-background-inside .contacts__ins:last-of-type {
+    margin-bottom: 0;
   }
 }
 .contact-background-inside .contacts a {
+  display: inline-block;
   color: #fff;
   text-align: center;
-  width: 200px;
-}
-@media only screen and (max-width: 767px) {
-  .contact-background-inside .contacts a {
-    margin-bottom: 15px;
-  }
-  .contact-background-inside .contacts a:last-of-type {
-    margin-bottom: 0;
-  }
 }
 .contact-background-inside .contacts a i {
   display: block;
@@ -654,7 +651,7 @@ img {
 }
 @media only screen and (max-width: 767px) {
   .contact-background-inside .contacts a i::before {
-    font-size: 34px;
+    font-size: 36px;
   }
 }
 .contact-background-inside .contacts a h3 {
@@ -680,9 +677,8 @@ img {
     line-height: 24px;
   }
 }
-.contact-background-inside .contacts a:hover i::before,
-.contact-background-inside .contacts a:hover h3 {
-  text-shadow: 2px 2px 3px #000;
+.contact-background-inside .contacts a:hover i::before {
+  color: #00718e;
 }
 .map {
   height: 500px;

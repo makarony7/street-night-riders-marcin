@@ -659,30 +659,29 @@ img {
         }
 
         .contacts {
-            display: flex;
-            justify-content: space-around;
-
-            @media @width-991 {
-                justify-content: space-between;
-            }
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
 
             @media @width-767 {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: repeat(1, 1fr);
             }
 
-            a {
-                color: @color-white;
-                text-align: center;
-                width: 200px;
+            &__ins {
+                justify-self: center;
 
                 @media @width-767 {
-                    margin-bottom: 15px;
+                    margin-bottom: 20px;
 
                     &:last-of-type {
                         margin-bottom: 0;
                     }
                 }
+            }
+
+            a {
+                display: inline-block;
+                color: @color-white;
+                text-align: center;
 
                 i {
                     display: block;
@@ -697,7 +696,7 @@ img {
                         }
 
                         @media @width-767 {
-                            font-size: 34px;
+                            font-size: 36px;
                         }
                     }
                 }
@@ -710,9 +709,8 @@ img {
 
                 &:hover {
 
-                    i::before,
-                    h3 {
-                        text-shadow: 2px 2px 3px @color-black;
+                    i::before {
+                        color: @color-light;
                     }
                 }
             }
